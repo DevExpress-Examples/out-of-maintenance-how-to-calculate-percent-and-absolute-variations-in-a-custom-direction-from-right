@@ -1,4 +1,5 @@
 using DevExpress.XtraEditors;
+using DevExpress.XtraPivotGrid;
 using System;
 
 namespace WindowsApplication1
@@ -8,14 +9,17 @@ namespace WindowsApplication1
         public Form1()
         {
             InitializeComponent();
+            excelDataSource1.FileName = "SalesPerson.xlsx";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.customerReportsTableAdapter.Fill(this.nwindDataSet.CustomerReports);
+            excelDataSource1.Fill();
+            pivotGridControl1.BestFit();
+            pivotGridControl1.BestFitDataHeaders(true);
         }
 
-        private void pivotGridControl1_CustomCellDisplayText(object sender, DevExpress.XtraPivotGrid.PivotCellDisplayTextEventArgs e)
+        private void pivotGridControl1_CustomCellDisplayText(object sender, PivotCellDisplayTextEventArgs e)
         {
             if (e.DataField.Name == "fieldVariation")
             {

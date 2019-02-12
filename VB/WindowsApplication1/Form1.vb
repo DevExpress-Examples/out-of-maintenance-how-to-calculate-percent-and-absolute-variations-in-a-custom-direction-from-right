@@ -1,4 +1,5 @@
 ﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraPivotGrid
 Imports System
 
 Namespace WindowsApplication1
@@ -7,13 +8,16 @@ Namespace WindowsApplication1
 
 		Public Sub New()
 			InitializeComponent()
+			excelDataSource1.FileName = "SalesPerson.xlsx"
 		End Sub
 
 		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
-			Me.customerReportsTableAdapter.Fill(Me.nwindDataSet.CustomerReports)
+			excelDataSource1.Fill()
+			pivotGridControl1.BestFit()
+			pivotGridControl1.BestFitDataHeaders(True)
 		End Sub
 
-		Private Sub pivotGridControl1_CustomCellDisplayText(ByVal sender As Object, ByVal e As DevExpress.XtraPivotGrid.PivotCellDisplayTextEventArgs) Handles pivotGridControl1.CustomCellDisplayText
+		Private Sub pivotGridControl1_CustomCellDisplayText(ByVal sender As Object, ByVal e As PivotCellDisplayTextEventArgs) Handles pivotGridControl1.CustomCellDisplayText
 			If e.DataField.Name = "fieldVariation" Then
 				Dim nextValue As Object = e.GetNextColumnCellValue(e.DataField)
 				If nextValue Is Nothing Then
