@@ -1,23 +1,16 @@
-Imports Microsoft.VisualBasic
+﻿Imports DevExpress.XtraEditors
 Imports System
-Imports System.Collections.Generic
-Imports System.ComponentModel
-Imports System.Data
-Imports System.Drawing
-Imports System.Text
-Imports System.Windows.Forms
 
 Namespace WindowsApplication1
 	Partial Public Class Form1
-		Inherits Form
+		Inherits XtraForm
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
 
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-			' TODO: This line of code loads data into the 'nwindDataSet.CustomerReports' table. You can move, or remove it, as needed.
+		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 			Me.customerReportsTableAdapter.Fill(Me.nwindDataSet.CustomerReports)
-
 		End Sub
 
 		Private Sub pivotGridControl1_CustomCellDisplayText(ByVal sender As Object, ByVal e As DevExpress.XtraPivotGrid.PivotCellDisplayTextEventArgs) Handles pivotGridControl1.CustomCellDisplayText

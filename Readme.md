@@ -4,12 +4,15 @@
 * [Form1.cs](./CS/WindowsApplication1/Form1.cs) (VB: [Form1.vb](./VB/WindowsApplication1/Form1.vb))
 * [Program.cs](./CS/WindowsApplication1/Program.cs) (VB: [Program.vb](./VB/WindowsApplication1/Program.vb))
 <!-- default file list end -->
-# How to calculate Percent and Absolute Variations in a custom direction: from right to left
+# How to Calculate Variations in Reverse Direction: from Right to Left
 
+This example demonstrates how to use the [PivotGridControl.CustomCellDisplayText](http://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.CustomCellDisplayText) event to display percent variation calculated in reverse direction (columns are read from right to left).
 
-<p>This example shows how to use the <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotGridControl_CustomCellDisplayTexttopic">PivotGridControl.CustomCellDisplayText</a> or <a href="https://documentation.devexpress.com/#windowsforms/DevExpressXtraPivotGridPivotGridControl_CustomCellValuetopic">PivotGridControl.CustomCellValue</a> event to display a field values as if its <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotGridFieldBase_SummaryDisplayTypetopic">PivotGridFieldBase.SummaryDisplayType</a> property is set to <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressDataPivotGridPivotSummaryDisplayTypeEnumtopic">PercentVariation</a>, but the values are read in the reverse direction (from right to left).</p>
-<p>To accomplish this task, you should create a new PivotGridField, bind it to the DataField, and hide the grand totals for this field via the <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotGridFieldOptions_ShowGrandTotaltopic">PivotGridFieldOptions.ShowGrandTotal</a> property. After that, you will need to manually calculate a display text for this field in the <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPivotGridPivotGridControl_CustomCellDisplayTexttopic">CustomCellDisplayText</a> or <a href="https://documentation.devexpress.com/#windowsforms/DevExpressXtraPivotGridPivotGridControl_CustomCellValuetopic">CustomCellValue</a> event, as shown in the example project.<br /><br />Note that it is also possible to access cell corresponding to a <strong>specific Field Value</strong> instead of the next/previous one. This functionality is demonstrated in the <a href="https://www.devexpress.com/Support/Center/p/E2125">Get summary values for previous period while calculating the current one</a> example.</p>
+This example uses a custom field whose display text is calculated in the event handler. 
 
-<br/>
+![screenshot](https://github.com/DevExpress-Examples/how-to-calculate-percent-and-absolute-variations-in-a-custom-direction-from-right-to-left-e2101/blob/13.1.4%2B/images/screenshot.png)
 
+See also:
 
+* [PivotGridControl.CustomCellValue](http://docs.devexpress.com/WindowsForms/DevExpress.XtraPivotGrid.PivotGridControl.CustomCellValue) 
+* [How to Calculate a Cell Value Based on the Value from the Previous Period](https://github.com/DevExpress-Examples/getting-a-summary-value-for-a-previous-period-while-calculating-the-current-one-e2125)

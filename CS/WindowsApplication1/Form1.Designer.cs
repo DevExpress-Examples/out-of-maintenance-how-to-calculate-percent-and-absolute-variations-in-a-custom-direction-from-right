@@ -30,17 +30,17 @@ namespace WindowsApplication1
         {
             this.components = new System.ComponentModel.Container();
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
-            this.nwindDataSet = new WindowsApplication1.nwindDataSet();
             this.customerReportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerReportsTableAdapter = new WindowsApplication1.nwindDataSetTableAdapters.CustomerReportsTableAdapter();
+            this.nwindDataSet = new WindowsApplication1.nwindDataSet();
             this.fieldProductName = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldCompanyName = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldOrderDate = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldProductAmount = new DevExpress.XtraPivotGrid.PivotGridField();
             this.fieldVariation = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.customerReportsTableAdapter = new WindowsApplication1.nwindDataSetTableAdapters.CustomerReportsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // pivotGridControl1
@@ -56,23 +56,19 @@ namespace WindowsApplication1
             this.fieldVariation});
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
             this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.Size = new System.Drawing.Size(990, 365);
+            this.pivotGridControl1.Size = new System.Drawing.Size(925, 365);
             this.pivotGridControl1.TabIndex = 0;
             this.pivotGridControl1.CustomCellDisplayText += new DevExpress.XtraPivotGrid.PivotCellDisplayTextEventHandler(this.pivotGridControl1_CustomCellDisplayText);
-            // 
-            // nwindDataSet
-            // 
-            this.nwindDataSet.DataSetName = "nwindDataSet";
-            this.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // customerReportsBindingSource
             // 
             this.customerReportsBindingSource.DataMember = "CustomerReports";
             this.customerReportsBindingSource.DataSource = this.nwindDataSet;
             // 
-            // customerReportsTableAdapter
+            // nwindDataSet
             // 
-            this.customerReportsTableAdapter.ClearBeforeFill = true;
+            this.nwindDataSet.DataSetName = "nwindDataSet";
+            this.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fieldProductName
             // 
@@ -88,6 +84,7 @@ namespace WindowsApplication1
             this.fieldCompanyName.Caption = "Company Name";
             this.fieldCompanyName.FieldName = "CompanyName";
             this.fieldCompanyName.Name = "fieldCompanyName";
+            this.fieldCompanyName.Width = 200;
             // 
             // fieldOrderDate
             // 
@@ -116,18 +113,22 @@ namespace WindowsApplication1
             this.fieldVariation.Name = "fieldVariation";
             this.fieldVariation.Options.ShowGrandTotal = false;
             // 
+            // customerReportsTableAdapter
+            // 
+            this.customerReportsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 365);
+            this.ClientSize = new System.Drawing.Size(925, 365);
             this.Controls.Add(this.pivotGridControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculate Variations in Reverse Order";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerReportsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

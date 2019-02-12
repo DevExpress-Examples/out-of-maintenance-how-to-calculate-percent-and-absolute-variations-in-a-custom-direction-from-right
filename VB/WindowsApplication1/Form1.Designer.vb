@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace WindowsApplication1
+﻿Namespace WindowsApplication1
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -27,17 +25,17 @@ Namespace WindowsApplication1
 		Private Sub InitializeComponent()
 			Me.components = New System.ComponentModel.Container()
 			Me.pivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl()
-			Me.nwindDataSet = New WindowsApplication1.nwindDataSet()
 			Me.customerReportsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.customerReportsTableAdapter = New WindowsApplication1.nwindDataSetTableAdapters.CustomerReportsTableAdapter()
+			Me.nwindDataSet = New WindowsApplication1.nwindDataSet()
 			Me.fieldProductName = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldCompanyName = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldOrderDate = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldProductAmount = New DevExpress.XtraPivotGrid.PivotGridField()
 			Me.fieldVariation = New DevExpress.XtraPivotGrid.PivotGridField()
-			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.customerReportsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.customerReportsTableAdapter = New WindowsApplication1.nwindDataSetTableAdapters.CustomerReportsTableAdapter()
+			DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me.customerReportsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+			DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
 			' pivotGridControl1
@@ -48,23 +46,20 @@ Namespace WindowsApplication1
 			Me.pivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() { Me.fieldProductName, Me.fieldCompanyName, Me.fieldOrderDate, Me.fieldProductAmount, Me.fieldVariation})
 			Me.pivotGridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.pivotGridControl1.Name = "pivotGridControl1"
-			Me.pivotGridControl1.Size = New System.Drawing.Size(990, 365)
+			Me.pivotGridControl1.Size = New System.Drawing.Size(925, 365)
 			Me.pivotGridControl1.TabIndex = 0
-'			Me.pivotGridControl1.CustomCellDisplayText += New DevExpress.XtraPivotGrid.PivotCellDisplayTextEventHandler(Me.pivotGridControl1_CustomCellDisplayText);
-			' 
-			' nwindDataSet
-			' 
-			Me.nwindDataSet.DataSetName = "nwindDataSet"
-			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.pivotGridControl1.CustomCellDisplayText += new DevExpress.XtraPivotGrid.PivotCellDisplayTextEventHandler(this.pivotGridControl1_CustomCellDisplayText);
 			' 
 			' customerReportsBindingSource
 			' 
 			Me.customerReportsBindingSource.DataMember = "CustomerReports"
 			Me.customerReportsBindingSource.DataSource = Me.nwindDataSet
 			' 
-			' customerReportsTableAdapter
+			' nwindDataSet
 			' 
-			Me.customerReportsTableAdapter.ClearBeforeFill = True
+			Me.nwindDataSet.DataSetName = "nwindDataSet"
+			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 			' 
 			' fieldProductName
 			' 
@@ -80,6 +75,7 @@ Namespace WindowsApplication1
 			Me.fieldCompanyName.Caption = "Company Name"
 			Me.fieldCompanyName.FieldName = "CompanyName"
 			Me.fieldCompanyName.Name = "fieldCompanyName"
+			Me.fieldCompanyName.Width = 200
 			' 
 			' fieldOrderDate
 			' 
@@ -108,18 +104,23 @@ Namespace WindowsApplication1
 			Me.fieldVariation.Name = "fieldVariation"
 			Me.fieldVariation.Options.ShowGrandTotal = False
 			' 
+			' customerReportsTableAdapter
+			' 
+			Me.customerReportsTableAdapter.ClearBeforeFill = True
+			' 
 			' Form1
 			' 
 			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
 			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-			Me.ClientSize = New System.Drawing.Size(990, 365)
+			Me.ClientSize = New System.Drawing.Size(925, 365)
 			Me.Controls.Add(Me.pivotGridControl1)
 			Me.Name = "Form1"
-			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
-			CType(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.customerReportsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+			Me.Text = "Calculate Variations in Reverse Order"
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
+			DirectCast(Me.pivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
+			DirectCast(Me.customerReportsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+			DirectCast(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 
 		End Sub
