@@ -15,7 +15,7 @@ This example demonstrates how to use the [PivotGridControl.CustomCellDisplayText
 
 This example uses a custom field whose display text is calculated in the event handler. 
 
-![screenshot](https://github.com/DevExpress-Examples/how-to-calculate-percent-and-absolute-variations-in-a-custom-direction-from-right-to-left-e2101/blob/18.2.4%2B/images/screenshot.png)
+![screenshot](./images/screenshot.png)
 
 See also:
 
